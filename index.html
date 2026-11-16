@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singam Ironman Academy — Running Academy & Marathon Village, Sivagangai</title>
+    <meta
+      name="description"
+      content="Singam Ironman Academy is Sivagangai's home for runners, fitness enthusiasts and future endurance athletes. Founded by Siva Balan. Training towards a marathon village with a 400 m running track in Tamil Nadu."
+    />
+    <meta name="theme-color" content="#0b0d0c" />
+    <meta property="og:title" content="Singam Ironman Academy — Train Strong. Run Far. Become a Singam." />
+    <meta
+      property="og:description"
+      content="A founder-led endurance running academy in Sivagangai, Tamil Nadu, building a marathon village with a 400 m running track."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply saved/OS language + theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var root = document.documentElement;
+          var theme = localStorage.getItem("sia-theme");
+          if (theme !== "light" && theme !== "dark") {
+            theme = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+          }
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+          root.lang = localStorage.getItem("sia-lang") === "ta" ? "ta" : "en";
+        } catch (e) {
+          /* storage blocked — keep defaults */
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Singam Ironman Academy",
+        "description": "A founder-led endurance running and fitness academy in Sivagangai, Tamil Nadu, founded by Siva Balan. Home of a marathon village with a planned 400 m running track.",
+        "foundingDate": "2025-09",
+        "founder": {
+          "@type": "Person",
+          "name": "Siva Balan",
+          "jobTitle": "Founder & Owner",
+          "sameAs": [
+            "https://www.instagram.com/sivabalan_singam/",
+            "https://www.youtube.com/@SivabalanSingam"
+          ]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sivagangai",
+          "addressRegion": "Tamil Nadu",
+          "addressCountry": "IN"
+        },
+        "areaServed": "Sivagangai, Tamil Nadu",
+        "openingHours": "Mo-Su 06:00-22:00",
+        "sameAs": [
+          "https://www.instagram.com/sivabalan_singam/",
+          "https://www.youtube.com/@SivabalanSingam",
+          "https://www.threads.net/@sivabalan_singam"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
