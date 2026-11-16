@@ -228,7 +228,7 @@ export function Contact() {
                       <h3 className="text-xl font-semibold tracking-tight md:text-2xl">
                         {c.contact.form.title}
                       </h3>
-                      <p className="mt-1.5 text-[12.5px] text-ink/50">
+                      <p className="mt-1.5 text-[12.5px] text-fg/55">
                         {c.contact.form.intro}
                       </p>
                     </div>
@@ -299,7 +299,7 @@ export function Contact() {
                             </option>
                           ))}
                         </select>
-                        <ChevronDown className="pointer-events-none absolute right-1 bottom-4 h-4 w-4 text-ink/55" />
+                        <ChevronDown className="pointer-events-none absolute right-1 bottom-4 h-4 w-4 text-fg/55" />
                       </div>
                     </Field>
 
@@ -326,7 +326,7 @@ export function Contact() {
                             </option>
                           ))}
                         </select>
-                        <ChevronDown className="pointer-events-none absolute right-1 bottom-4 h-4 w-4 text-ink/55" />
+                        <ChevronDown className="pointer-events-none absolute right-1 bottom-4 h-4 w-4 text-fg/55" />
                       </div>
                     </Field>
 
@@ -349,12 +349,12 @@ export function Contact() {
                   </div>
 
                   <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="max-w-[34ch] text-[10.5px] leading-relaxed text-ink/55">
+                    <p className="max-w-[34ch] text-[10.5px] leading-relaxed text-fg/55">
                       {c.contact.form.privacy}
                     </p>
                     <button
                       type="submit"
-                      className="group inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-ink px-7 py-4 text-[10.5px] font-bold tracking-[0.16em] uppercase text-bone transition-colors hover:bg-gold hover:text-ink"
+                      className="group inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-fg px-7 py-4 text-[10.5px] font-bold tracking-[0.16em] uppercase text-surface transition-colors hover:bg-gold hover:text-ink"
                     >
                       {c.contact.form.submit}
                       <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -363,26 +363,26 @@ export function Contact() {
                 </form>
               ) : (
                 <div className="flex min-h-[420px] flex-col justify-center">
-                  <span className="grid h-12 w-12 place-items-center rounded-full bg-ink text-gold">
+                  <span className="grid h-12 w-12 place-items-center rounded-full bg-fg text-surface">
                     <Check className="h-5 w-5" strokeWidth={2.5} />
                   </span>
                   <h3 className="mt-6 text-2xl font-semibold tracking-tight md:text-3xl">
                     {c.contact.form.successThanks}{" "}
                     {form.name.trim().split(" ")[0]}.
                   </h3>
-                  <p className="mt-2 max-w-md text-[13px] leading-relaxed text-ink/55">
+                  <p className="mt-2 max-w-md text-[13px] leading-relaxed text-fg/60">
                     {c.contact.form.successBody}
                   </p>
 
-                  <dl className="mt-6 grid gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-white/40 p-5 text-[12.5px] sm:grid-cols-2">
+                  <dl className="mt-6 grid gap-x-6 gap-y-3 rounded-2xl border border-fg/10 bg-fg/5 p-5 text-[12.5px] sm:grid-cols-2">
                     <div>
-                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-ink/50">
+                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-fg/50">
                         {c.contact.form.summaryGoal}
                       </dt>
                       <dd className="mt-0.5 font-medium">{form.goal}</dd>
                     </div>
                     <div>
-                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-ink/50">
+                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-fg/50">
                         {c.contact.form.summaryTiming}
                       </dt>
                       <dd className="mt-0.5 font-medium">
@@ -390,13 +390,13 @@ export function Contact() {
                       </dd>
                     </div>
                     <div>
-                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-ink/50">
+                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-fg/50">
                         {c.contact.form.summaryPhone}
                       </dt>
                       <dd className="mt-0.5 font-medium">{form.phone}</dd>
                     </div>
                     <div>
-                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-ink/50">
+                      <dt className="text-[9px] font-semibold tracking-[0.16em] uppercase text-fg/50">
                         {c.contact.form.summaryName}
                       </dt>
                       <dd className="mt-0.5 font-medium">{form.name}</dd>
@@ -411,7 +411,7 @@ export function Contact() {
                       }
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-bone transition-colors hover:bg-gold hover:text-ink"
+                      className="inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-surface transition-colors hover:bg-gold hover:text-ink"
                     >
                       {whatsappHref ? (
                         <MessageCircle className="h-3.5 w-3.5" />
@@ -425,7 +425,7 @@ export function Contact() {
                     <button
                       type="button"
                       onClick={copyDetails}
-                      className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-ink/70 transition-colors hover:border-ink hover:text-ink"
+                      className="inline-flex items-center gap-2 rounded-full border border-fg/20 px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-fg/70 transition-colors hover:border-fg hover:text-fg"
                     >
                       <Copy className="h-3.5 w-3.5" />
                       {copied ? c.contact.form.copied : c.contact.form.copy}
@@ -436,13 +436,13 @@ export function Contact() {
                         setForm(emptyEnquiry);
                         setSubmitted(false);
                       }}
-                      className="inline-flex items-center gap-1.5 px-2 py-3 text-[10px] font-semibold tracking-[0.12em] uppercase text-ink/55 hover:text-ink"
+                      className="inline-flex items-center gap-1.5 px-2 py-3 text-[10px] font-semibold tracking-[0.12em] uppercase text-fg/55 hover:text-fg"
                     >
                       {c.contact.form.newEnquiry}
                     </button>
                   </div>
 
-                  <p className="mt-5 border-t border-ink/10 pt-4 text-[10px] leading-relaxed text-ink/50">
+                  <p className="mt-5 border-t border-fg/10 pt-4 text-[10px] leading-relaxed text-fg/50">
                     {c.contact.form.demoNote}
                   </p>
                   <p aria-live="polite" className="sr-only">
@@ -475,7 +475,7 @@ function Field({
     <div>
       <label
         htmlFor={htmlFor}
-        className="flex items-center gap-1.5 text-[9.5px] font-bold tracking-[0.18em] uppercase text-ink/45"
+        className="flex items-center gap-1.5 text-[9.5px] font-bold tracking-[0.18em] uppercase text-fg/45"
       >
         {label}
         {required && <span className="text-ember">*</span>}

@@ -269,9 +269,11 @@ export function SectionLabel({
 export function TrackGraphic({
   className,
   animate = true,
+  accent = "var(--color-accent)",
 }: {
   className?: string;
   animate?: boolean;
+  accent?: string;
 }) {
   return (
     <svg
@@ -314,7 +316,7 @@ export function TrackGraphic({
         width={504}
         height={268}
         rx={134}
-        stroke="var(--color-gold)"
+        stroke={accent}
         strokeWidth={2.4}
         strokeDasharray="26 214"
         className={animate ? "animate-track" : undefined}
@@ -341,7 +343,7 @@ export function LionMark({ className }: { className?: string }) {
         d="M16 19.5 21 22h6l5-2.5-1.6 8.2L24 34l-6.4-6.3L16 19.5Z"
         fill="currentColor"
       />
-      <path d="M24 24.5v4" stroke="var(--color-ink)" strokeWidth="1.5" />
+      <path d="M24 24.5v4" stroke="var(--color-surface)" strokeWidth="1.5" />
     </svg>
   );
 }

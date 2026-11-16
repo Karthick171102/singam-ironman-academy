@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-full border border-gold/40 text-gold">
+              <span className="grid h-11 w-11 place-items-center rounded-full border border-inverse-accent/40 text-inverse-accent">
                 <LionMark className="h-6 w-6" />
               </span>
               <div>
@@ -40,7 +40,7 @@ export function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-inverse-fg/15 text-inverse-fg/55 transition-colors hover:border-gold hover:text-gold"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-inverse-fg/15 text-inverse-fg/55 transition-colors hover:border-inverse-accent hover:text-inverse-accent"
                 >
                   {s.icon === "instagram" ? (
                     <Instagram className="h-4 w-4" strokeWidth={1.7} />
@@ -56,7 +56,7 @@ export function Footer() {
 
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3">
             <div>
-              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-gold/70">
+              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-inverse-accent">
                 {c.footer.explore}
               </p>
               <ul className="mt-5 space-y-3">
@@ -74,7 +74,7 @@ export function Footer() {
             </div>
 
             <div>
-              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-gold/70">
+              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-inverse-accent">
                 {c.footer.academy}
               </p>
               <ul className="mt-5 space-y-3 text-[12.5px] text-inverse-fg/55">
@@ -107,7 +107,7 @@ export function Footer() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-gold/70">
+              <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-inverse-accent">
                 {c.footer.visit}
               </p>
               <p className="mt-5 text-[12.5px] leading-relaxed text-inverse-fg/55">
@@ -120,7 +120,7 @@ export function Footer() {
                 href="https://www.instagram.com/sivabalan_singam/"
                 target="_blank"
                 rel="noreferrer"
-                className="group mt-5 inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] uppercase text-gold"
+                className="group mt-5 inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] uppercase text-inverse-accent"
               >
                 {c.footer.enquire}
                 <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -139,10 +139,10 @@ export function Footer() {
           </div>
           <a
             href="#top"
-            className="group inline-flex shrink-0 items-center gap-2 text-[9.5px] font-semibold tracking-[0.18em] uppercase text-inverse-fg/40 transition-colors hover:text-gold"
+            className="group inline-flex shrink-0 items-center gap-2 text-[9.5px] font-semibold tracking-[0.18em] uppercase text-inverse-fg/40 transition-colors hover:text-inverse-accent"
           >
             {c.meta.backToTop}
-            <span className="grid h-8 w-8 place-items-center rounded-full border border-inverse-fg/15 transition-colors group-hover:border-gold">
+            <span className="grid h-8 w-8 place-items-center rounded-full border border-inverse-fg/15 transition-colors group-hover:border-inverse-accent">
               <ArrowUp className="h-3.5 w-3.5" />
             </span>
           </a>

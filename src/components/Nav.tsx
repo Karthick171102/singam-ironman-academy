@@ -46,7 +46,7 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
             className="group flex items-center gap-3"
             aria-label={`${c.meta.brandTop} ${c.meta.brandSub} — ${c.meta.skip}`}
           >
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-gold/40 text-gold transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+            <span className="grid h-10 w-10 place-items-center rounded-full border border-accent/40 text-accent transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
               <LionMark className="h-6 w-6" />
             </span>
             <span className="leading-none">

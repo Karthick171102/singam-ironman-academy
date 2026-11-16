@@ -35,6 +35,7 @@ export function About() {
                 <TrackGraphic
                   className="pointer-events-none absolute -top-10 -right-16 w-[420px] rotate-12 text-inverse-fg/15"
                   animate={false}
+                  accent="var(--color-inverse-accent)"
                 />
 
                 <div className="relative flex items-center justify-between gap-3 text-[9px] font-semibold tracking-[0.24em] uppercase text-inverse-fg/45">
