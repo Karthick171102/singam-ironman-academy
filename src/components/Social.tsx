@@ -35,7 +35,7 @@ export function Social() {
                   href="https://www.youtube.com/@SivabalanSingam"
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-2.5 rounded-full bg-inverse px-6 py-3.5 text-[10.5px] font-bold tracking-[0.16em] uppercase text-inverse-fg transition-colors hover:bg-gold hover:text-ink"
+                  className="group inline-flex items-center gap-2.5 rounded-full bg-inverse px-6 py-3.5 text-[10.5px] font-bold tracking-[0.16em] uppercase text-inverse-fg transition-colors hover:bg-accent hover:text-on-accent"
                 >
                   <Youtube className="h-4 w-4" />
                   {c.social.subscribe}
@@ -62,8 +62,8 @@ export function Social() {
               className="group relative block overflow-hidden rounded-[1.75rem] border border-line"
             >
               <Img
-                src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1600&q=80"
-                alt={c.gallery.items[1]?.alt ?? c.social.videoTitle}
+                src="/founder/siva-balan-night-run.jpg"
+                alt={`${c.about.cardName} — ${c.social.videoTitle}`}
                 wrapperClassName="aspect-[16/10] w-full"
                 className="transition-transform duration-[900ms] group-hover:scale-[1.04]"
                 fallbackLabel={c.social.videoTitle}
@@ -71,15 +71,15 @@ export function Social() {
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(6,8,7,0.9),rgba(6,8,7,0.1)_60%)]" />
 
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="relative grid h-16 w-16 place-items-center rounded-full bg-gold text-ink transition-transform duration-300 group-hover:scale-110 md:h-20 md:w-20">
-                  <span className="animate-pulse-ring absolute inset-0 rounded-full bg-gold/40" />
+                <span className="relative grid h-16 w-16 place-items-center rounded-full bg-media-accent text-on-media-accent transition-transform duration-300 group-hover:scale-110 md:h-20 md:w-20">
+                  <span className="animate-pulse-ring absolute inset-0 rounded-full bg-media-accent/40" />
                   <Play className="relative ml-1 h-6 w-6 fill-current" />
                 </span>
               </div>
 
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
                 <div>
-                  <p className="text-[9px] font-semibold tracking-[0.22em] uppercase text-gold">
+                  <p className="text-[9px] font-semibold tracking-[0.22em] uppercase text-media-accent">
                     {c.social.watch}
                   </p>
                   <p className="heading mt-2 max-w-[22ch] text-2xl text-white md:text-3xl">

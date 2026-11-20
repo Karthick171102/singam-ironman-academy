@@ -1,7 +1,7 @@
-import { Moon, Sun } from "lucide-react";
 import { useSite, type Theme } from "../lib/preferences";
 import { cn } from "./ui";
 import type { Lang } from "../data/site";
+import { Moon, Sun } from "lucide-react";
 
 const langs: Array<{ id: Lang; short: string; full: string }> = [
   { id: "en", short: "EN", full: "English" },
@@ -11,18 +11,22 @@ const langs: Array<{ id: Lang; short: string; full: string }> = [
 export function LangToggle({
   className,
   wide = false,
+  tone = "surface",
 }: {
   className?: string;
   wide?: boolean;
+  tone?: "surface" | "inverse";
 }) {
   const { lang, setLang, c } = useSite();
+  const inverse = tone === "inverse";
 
   return (
     <div
       role="group"
       aria-label={c.meta.language}
       className={cn(
-        "inline-flex items-center rounded-full border border-line p-0.5",
+        "inline-flex items-center rounded-full border p-0.5",
+        inverse ? "border-inverse-fg/20" : "border-line",
         className,
       )}
     >
@@ -41,8 +45,12 @@ export function LangToggle({
                 ? "px-4 py-2 text-[11px] tracking-[0.04em]"
                 : "px-3 py-1.5 text-[10px] tracking-[0.08em]",
               active
-                ? "bg-fg text-surface"
-                : "text-fg/55 hover:text-fg",
+                ? inverse
+                  ? "bg-inverse-fg text-inverse"
+                  : "bg-fg text-surface"
+                : inverse
+                  ? "text-inverse-fg/55 hover:text-inverse-fg"
+                  : "text-fg/55 hover:text-fg",
             )}
           >
             {wide ? l.full : l.short}
@@ -53,51 +61,15 @@ export function LangToggle({
   );
 }
 
-/** Single compact button for narrow headers: shows the language you can switch to. */
-export function CompactLangToggle({ className }: { className?: string }) {
-  const { lang, toggleLang, c } = useSite();
-  return (
-    <button
-      type="button"
-      onClick={toggleLang}
-      aria-label={c.meta.switchLang}
-      title={c.meta.switchLang}
-      className={cn(
-        "grid h-10 min-w-10 place-items-center rounded-full border border-line px-2.5 text-[11px] font-bold text-fg/75 transition-colors hover:border-accent hover:text-accent",
-        className,
-      )}
-    >
-      {lang === "en" ? "த" : "EN"}
-    </button>
-  );
-}
-
-export function ThemeToggle({ className }: { className?: string }) {
-  const { theme, toggleTheme, c } = useSite();
-  const isDark = theme === "dark";
-
-  return (
-    <button
-      type="button"
-      onClick={toggleTheme}
-      aria-label={isDark ? c.meta.themeLight : c.meta.themeDark}
-      title={isDark ? c.meta.themeLight : c.meta.themeDark}
-      className={cn(
-        "grid h-10 w-10 place-items-center rounded-full border border-line text-fg/70 transition-colors hover:border-accent hover:text-accent",
-        className,
-      )}
-    >
-      {isDark ? (
-        <Sun className="h-4 w-4" strokeWidth={1.8} />
-      ) : (
-        <Moon className="h-4 w-4" strokeWidth={1.8} />
-      )}
-    </button>
-  );
-}
-
-export function ThemeSwitch({ className }: { className?: string }) {
+export function ThemeSwitch({
+  className,
+  tone = "surface",
+}: {
+  className?: string;
+  tone?: "surface" | "inverse";
+}) {
   const { theme, setTheme, c } = useSite();
+  const inverse = tone === "inverse";
 
   const options: Array<{ id: Theme; label: string; Icon: typeof Sun }> = [
     { id: "light", label: c.meta.light, Icon: Sun },
@@ -109,7 +81,8 @@ export function ThemeSwitch({ className }: { className?: string }) {
       role="group"
       aria-label={c.meta.theme}
       className={cn(
-        "inline-flex items-center rounded-full border border-line p-0.5",
+        "inline-flex items-center rounded-full border p-0.5",
+        inverse ? "border-inverse-fg/20" : "border-line",
         className,
       )}
     >
@@ -124,8 +97,12 @@ export function ThemeSwitch({ className }: { className?: string }) {
             className={cn(
               "inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[11px] font-bold transition-colors",
               active
-                ? "bg-fg text-surface"
-                : "text-fg/55 hover:text-fg",
+                ? inverse
+                  ? "bg-inverse-fg text-inverse"
+                  : "bg-fg text-surface"
+                : inverse
+                  ? "text-inverse-fg/55 hover:text-inverse-fg"
+                  : "text-fg/55 hover:text-fg",
             )}
           >
             <Icon className="h-3.5 w-3.5" strokeWidth={1.8} />

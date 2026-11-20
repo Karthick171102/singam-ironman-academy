@@ -31,8 +31,8 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
             <div className="mb-7 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/8 px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.2em] uppercase text-accent">
                 <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-gold" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-gold" />
+                  <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-accent" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
                 </span>
                 {c.hero.badge}
               </span>
@@ -72,7 +72,7 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
               <a
                 href="#contact"
                 onClick={onJoin}
-                className="group inline-flex items-center gap-2.5 rounded-full bg-gold px-7 py-4 text-[11px] font-bold tracking-[0.16em] uppercase text-ink transition-colors hover:bg-fg hover:text-surface"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-accent px-7 py-4 text-[11px] font-bold tracking-[0.16em] uppercase text-on-accent transition-colors hover:bg-accent-strong"
               >
                 {c.hero.ctaJoin}
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -154,7 +154,7 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
               <textPath href="#stampPath">{c.hero.stamp}</textPath>
             </text>
           </svg>
-          <LionMark className="h-10 w-10 text-gold/60" />
+          <LionMark className="h-12 w-12 text-accent/60" />
         </div>
       </div>
     </section>

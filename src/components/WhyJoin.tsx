@@ -24,7 +24,7 @@ export function WhyJoin() {
                   {c.why.titleLine1}
                   <br />
                   {c.why.titleLine2}
-                  <span className="text-gold">.</span>
+                  <span className="text-inverse-accent">.</span>
                 </h2>
                 <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-inverse-fg/55">
                   {c.why.body}

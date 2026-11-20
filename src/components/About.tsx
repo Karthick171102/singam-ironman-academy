@@ -5,7 +5,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import { cn, LionMark, Reveal, SectionLabel, TrackGraphic } from "./ui";
+import { cn, Img, LionMark, Reveal, SectionLabel } from "./ui";
 import { useSite } from "../lib/preferences";
 import type { CredentialIcon } from "../data/site";
 
@@ -31,44 +31,52 @@ export function About() {
           {/* Athlete card */}
           <Reveal className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:sticky lg:top-28">
-              <div className="relative overflow-hidden rounded-[1.75rem] bg-inverse p-7 text-inverse-fg shadow-[0_30px_70px_-30px_rgba(0,0,0,0.45)] md:p-9">
-                <TrackGraphic
-                  className="pointer-events-none absolute -top-10 -right-16 w-[420px] rotate-12 text-inverse-fg/15"
-                  animate={false}
-                  accent="var(--color-inverse-accent)"
-                />
+              <div className="relative overflow-hidden rounded-[1.75rem] bg-inverse text-inverse-fg shadow-[0_30px_70px_-30px_rgba(0,0,0,0.45)]">
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Img
+                    src="/founder/siva-balan-portrait.jpg"
+                    alt={`${c.about.cardName} — ${c.about.cardRole}`}
+                    wrapperClassName="h-full w-full"
+                    className="h-full w-full object-cover object-[50%_32%]"
+                    fallbackLabel={c.about.cardName}
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,13,12,0.94)_0%,rgba(11,13,12,0.5)_36%,rgba(11,13,12,0.04)_66%)]" />
+                  <div className="absolute inset-x-0 top-0 h-28 bg-[linear-gradient(to_bottom,rgba(11,13,12,0.78),transparent)]" />
 
-                <div className="relative flex items-center justify-between gap-3 text-[9px] font-semibold tracking-[0.24em] uppercase text-inverse-fg/45">
-                  <span>{c.about.cardFooter}</span>
-                  <span>{c.about.cardEst}</span>
-                </div>
+                  <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-6 text-[9px] font-semibold tracking-[0.24em] uppercase text-white/75">
+                    <span>{c.about.cardFooter}</span>
+                    <span>{c.about.cardEst}</span>
+                  </div>
 
-                <div className="relative mt-10 flex justify-center">
-                  <div className="relative grid h-36 w-36 place-items-center rounded-full border border-inverse-accent/30">
-                    <div className="absolute inset-3 rounded-full border border-dashed border-inverse-accent/25" />
-                    <LionMark className="h-16 w-16 text-inverse-accent" />
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
+                    <div className="flex items-end justify-between gap-4">
+                      <div>
+                        <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-media-accent">
+                          {c.about.cardRole}
+                        </p>
+                        <h3 className="heading mt-2.5 text-4xl text-white md:text-5xl">
+                          {c.about.cardName}
+                        </h3>
+                      </div>
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/20 bg-black/25 text-media-accent backdrop-blur-md">
+                        <LionMark className="h-6 w-6" />
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="relative mt-10">
-                  <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-inverse-accent">
-                    {c.about.cardRole}
-                  </p>
-                  <h3 className="heading mt-3 text-4xl md:text-5xl">
-                    {c.about.cardName}
-                  </h3>
-                  <p className="mt-3 max-w-[24ch] text-sm leading-relaxed text-inverse-fg/55">
+                <div className="relative p-6 md:p-7">
+                  <p className="max-w-[34ch] text-sm leading-relaxed text-inverse-fg/60">
                     {c.about.cardBlurb}
                   </p>
-                </div>
-
-                <div className="relative mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-inverse-fg/10 pt-5">
-                  <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-inverse-fg/50">
-                    {c.about.cardLocation}
-                  </span>
-                  <span className="rounded-full border border-inverse-accent/35 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] uppercase text-inverse-accent">
-                    {c.about.cardChip}
-                  </span>
+                  <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-inverse-fg/10 pt-5">
+                    <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-inverse-fg/45">
+                      {c.about.cardLocation}
+                    </span>
+                    <span className="rounded-full border border-inverse-accent/35 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] uppercase text-inverse-accent">
+                      {c.about.cardChip}
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -149,10 +157,10 @@ export function About() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-[10.5px] font-semibold tracking-[0.1em] uppercase text-fg transition-colors hover:border-gold hover:bg-gold hover:text-ink"
+                    className="group inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-[10.5px] font-semibold tracking-[0.1em] uppercase text-fg transition-colors hover:border-accent hover:bg-accent hover:text-on-accent"
                   >
                     {s.label}
-                    <span className="text-fg/40 transition-colors group-hover:text-ink/60">
+                    <span className="text-fg/40 transition-colors group-hover:text-on-accent/70">
                       {s.followers}
                     </span>
                     <ArrowUpRight className="h-3 w-3 opacity-40 transition-opacity group-hover:opacity-100" />

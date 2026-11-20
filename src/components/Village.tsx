@@ -49,7 +49,7 @@ export function Village() {
 
               <div className="relative flex items-center justify-between gap-3 px-6 pt-6 md:px-8">
                 <span className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-[9px] font-semibold tracking-[0.18em] uppercase text-fg/60">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                   {c.village.trackLabel}
                 </span>
                 <span className="text-[9px] font-semibold tracking-[0.2em] uppercase text-fg/30">
@@ -117,7 +117,7 @@ export function Village() {
 
             <Reveal delay={340}>
               <div className="mt-8 flex flex-wrap gap-3">
-                <LinkButton href="#updates" variant="gold" className="py-3.5">
+                <LinkButton href="#updates" variant="solid" className="py-3.5">
                   {c.village.ctaUpdates}
                 </LinkButton>
                 <LinkButton href="#contact" variant="outline" className="py-3.5">

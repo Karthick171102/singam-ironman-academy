@@ -133,7 +133,7 @@ const en = {
     cardFooter: "Singam Ironman Academy",
     cardEst: "Est. 2025",
     caption:
-      "Founder portrait and academy photography to be added once approved by Siva Balan.",
+      "Siva Balan — runner, creator and founder of Singam Ironman Academy.",
     follow: "Follow",
     credentials: [
       {
@@ -362,7 +362,7 @@ const en = {
     subscribe: "Subscribe on YouTube",
     instagram: "Instagram",
     watch: "Watch",
-    videoTitle: "The marathon village, as it's built",
+    videoTitle: "Night miles through Sivagangai",
     youtube: "YouTube",
   },
   faq: {
@@ -490,8 +490,8 @@ const en = {
       marathon: "Marathon training",
       track: "400 m track",
       visit: "Book a ground visit",
-      faq: "FAQ",
     },
+    preferences: "Language & appearance",
     enquire: "Enquire on Instagram",
     copyright: (year: number) =>
       `© ${year} Singam Ironman Academy · Sivagangai, Tamil Nadu. All rights reserved.`,
@@ -578,7 +578,7 @@ const ta: typeof en = {
     cardFooter: "சிங்கம் அயன்மேன் அகாடமி",
     cardEst: "2025 தொடக்கம்",
     caption:
-      "நிறுவனர் புகைப்படமும் அகாடமி புகைப்படங்களும் சிவா பாலனின் அனுமதிக்குப் பிறகு சேர்க்கப்படும்.",
+      "சிவா பாலன் — ஓட்டப்பந்தய வீரர், உருவாக்குநர் மற்றும் சிங்கம் அயன்மேன் அகாடமியின் நிறுவனர்.",
     follow: "பின்தொடருங்கள்",
     credentials: [
       {
@@ -811,7 +811,7 @@ const ta: typeof en = {
     subscribe: "யூடியூபில் சந்தா செய்யுங்கள்",
     instagram: "இன்ஸ்டாகிராம்",
     watch: "பாருங்கள்",
-    videoTitle: "மாரத்தான் கிராமம், கட்டப்படுவதைப் பாருங்கள்",
+    videoTitle: "சிவகங்கையில் இரவு ஓட்டம்",
     youtube: "யூடியூப்",
   },
   faq: {
@@ -939,8 +939,8 @@ const ta: typeof en = {
       marathon: "மாரத்தான் பயிற்சி",
       track: "400 மீ பாதை",
       visit: "மைதான வருகையை முன்பதிவு செய்",
-      faq: "கேள்விகள்",
     },
+    preferences: "மொழி & தோற்றம்",
     enquire: "இன்ஸ்டாகிராமில் விசாரிக்க",
     copyright: (year: number) =>
       `© ${year} சிங்கம் அயன்மேன் அகாடமி · சிவகங்கை, தமிழ்நாடு. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.`,

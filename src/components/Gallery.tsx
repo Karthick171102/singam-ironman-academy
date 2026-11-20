@@ -68,7 +68,7 @@ export function Gallery() {
                     <span className="rounded-full bg-white/10 px-3 py-1.5 text-[9px] font-bold tracking-[0.16em] uppercase text-white/80 backdrop-blur-md">
                       {item.date}
                     </span>
-                    <span className="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/70 transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
+                    <span className="grid h-8 w-8 place-items-center rounded-full border border-white/20 text-white/70 transition-colors group-hover:border-media-accent group-hover:bg-media-accent group-hover:text-on-media-accent">
                       <ArrowUpRight className="h-3.5 w-3.5" />
                     </span>
                   </div>
@@ -103,7 +103,7 @@ export function Gallery() {
               href="https://www.instagram.com/sivabalan_singam/"
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col justify-between rounded-[1.4rem] border border-line bg-inverse p-6 text-inverse-fg transition-colors hover:border-gold/40"
+              className="group flex h-full flex-col justify-between rounded-[1.4rem] border border-line bg-inverse p-6 text-inverse-fg transition-colors hover:border-inverse-accent/50"
             >
               <div className="flex items-center justify-between">
                 <span className="grid h-10 w-10 place-items-center rounded-full border border-inverse-accent/35 text-inverse-accent">

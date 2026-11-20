@@ -43,14 +43,14 @@ function Shell() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-70 focus:rounded-full focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:font-bold focus:tracking-widest focus:text-ink focus:uppercase"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-70 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:text-[11px] focus:font-bold focus:tracking-widest focus:text-on-accent focus:uppercase"
       >
         {c.meta.skip}
       </a>
 
       <div
         aria-hidden="true"
-        className="fixed inset-x-0 top-0 z-60 h-[2px] origin-left bg-gold transition-transform duration-150"
+        className="fixed inset-x-0 top-0 z-60 h-[2px] origin-left bg-accent transition-transform duration-150"
         style={{ transform: `scaleX(${progress / 100})` }}
       />
 

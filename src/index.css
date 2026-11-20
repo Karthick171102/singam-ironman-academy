@@ -5,8 +5,6 @@
   /* fixed brand colours (do not flip with theme) */
   --color-ink: #0b0d0c;
   --color-bone: #f4efe5;
-  --color-gold: #f0b429;
-  --color-gold-2: #d69a17;
   --color-ember: #dd6230;
 
   /* theme-aware semantic tokens — dark values, overridden for light */
@@ -15,11 +13,17 @@
   --color-card: #1a1f1b;
   --color-fg: #f4efe5;
   --color-line: rgba(244, 239, 229, 0.12);
-  --color-accent: #f0b429;
+  --color-accent: #ef6a4d;
+  --color-accent-strong: #d9522f;
+  --color-on-accent: #14100e;
   --color-inverse: #f4efe5;
   --color-inverse-fg: #0b0d0c;
-  --color-inverse-accent: #8a5b00;
-  --color-inverse-accent-strong: #6b4600;
+  --color-inverse-accent: #a3301f;
+  --color-inverse-accent-strong: #8a2617;
+  --color-on-inverse-accent: #fdf8ef;
+  /* stays constant under both themes — only used over photography */
+  --color-media-accent: #ff8a6b;
+  --color-on-media-accent: #1a0f0b;
   --grid-line: rgba(244, 239, 229, 0.07);
 
   --font-display: "Anton", "Arial Narrow", sans-serif;
@@ -32,7 +36,7 @@
   --animate-pulse-ring: pulse-ring 3.2s ease-out infinite;
 
   /* atmospheric glows used in hero / village / inverse panels */
-  --hero-glow: rgba(240, 180, 41, 0.16);
+  --hero-glow: rgba(239, 106, 77, 0.16);
   --hero-ember: rgba(221, 98, 48, 0.08);
 }
 
@@ -42,15 +46,16 @@ html[data-theme="light"] {
   --color-card: #fffdf8;
   --color-fg: #131511;
   --color-line: rgba(19, 21, 17, 0.14);
-  --color-accent: #8a5b00;
+  --color-accent: #a3301f;
+  --color-accent-strong: #8a2617;
+  --color-on-accent: #fdf8ef;
   --color-inverse: #141713;
   --color-inverse-fg: #f7f2e7;
-  --color-inverse-accent: #e9ae1d;
-  --color-inverse-accent-strong: #f5c34d;
+  --color-inverse-accent: #ef6a4d;
+  --color-inverse-accent-strong: #f58b72;
+  --color-on-inverse-accent: #14100e;
   --grid-line: rgba(19, 21, 17, 0.07);
-  --color-gold: #e9ae1d;
-  --color-gold-2: #a97600;
-  --hero-glow: rgba(214, 154, 23, 0.2);
+  --hero-glow: rgba(163, 48, 31, 0.17);
   --hero-ember: rgba(221, 98, 48, 0.1);
 }
 
@@ -103,8 +108,8 @@ body {
 }
 
 ::selection {
-  background: var(--color-gold);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
 }
 
 /* Focus visibility for keyboard users */

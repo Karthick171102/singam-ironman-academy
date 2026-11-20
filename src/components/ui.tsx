@@ -114,18 +114,19 @@ export function Img({
 /* Buttons & links                                                     */
 /* ------------------------------------------------------------------ */
 
-type Variant = "gold" | "outline" | "ink" | "ghost" | "contrast";
+type Variant = "solid" | "outline" | "ink" | "ghost" | "contrast";
 
 const variants: Record<Variant, string> = {
-  gold: "bg-gold text-ink hover:bg-fg hover:text-surface",
+  solid:
+    "bg-accent text-on-accent hover:bg-accent-strong hover:text-on-accent",
   outline: "border border-line text-fg hover:border-accent hover:text-accent",
-  ink: "bg-inverse text-inverse-fg hover:bg-gold hover:text-ink",
+  ink: "bg-inverse text-inverse-fg hover:bg-accent hover:text-on-accent",
   ghost: "text-fg/70 hover:text-accent",
   contrast:
-    "bg-inverse-accent text-inverse-fg hover:bg-inverse-accent-strong",
+    "bg-inverse-accent text-on-inverse-accent hover:bg-inverse-accent-strong",
 };
 
-export function buttonClasses(variant: Variant = "gold", className?: string) {
+export function buttonClasses(variant: Variant = "solid", className?: string) {
   return cn(
     "group inline-flex items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.16em] transition-all duration-300",
     variants[variant],
@@ -136,7 +137,7 @@ export function buttonClasses(variant: Variant = "gold", className?: string) {
 export function LinkButton({
   href,
   children,
-  variant = "gold",
+  variant = "solid",
   className,
   external,
   icon = true,
@@ -165,7 +166,7 @@ export function LinkButton({
 export function Button({
   children,
   className,
-  variant = "gold",
+  variant = "solid",
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant }) {
   return (
@@ -181,18 +182,18 @@ export function Button({
 
 export function Eyebrow({
   children,
-  tone = "gold",
+  tone = "accent",
   className,
 }: {
   children: ReactNode;
-  tone?: "gold" | "ink" | "inverse";
+  tone?: "accent" | "ink" | "inverse";
   className?: string;
 }) {
   return (
     <span
       className={cn(
         "eyebrow",
-        tone === "gold"
+        tone === "accent"
           ? "text-accent"
           : tone === "inverse"
             ? "text-inverse-accent"
@@ -203,7 +204,7 @@ export function Eyebrow({
       <span
         className={cn(
           "h-px w-8",
-          tone === "gold"
+          tone === "accent"
             ? "bg-accent/60"
             : tone === "inverse"
               ? "bg-inverse-accent/60"
@@ -218,17 +219,17 @@ export function Eyebrow({
 export function SectionLabel({
   index,
   children,
-  tone = "gold",
+  tone = "accent",
 }: {
   index: string;
   children: ReactNode;
-  tone?: "gold" | "ink" | "inverse";
+  tone?: "accent" | "ink" | "inverse";
 }) {
   return (
     <div
       className={cn(
         "flex items-center gap-3 text-[10px] font-semibold tracking-[0.24em] uppercase",
-        tone === "gold"
+        tone === "accent"
           ? "text-accent"
           : tone === "inverse"
             ? "text-inverse-accent"
@@ -238,7 +239,7 @@ export function SectionLabel({
       <span
         className={cn(
           "font-mono tabular-nums",
-          tone === "gold"
+          tone === "accent"
             ? "text-accent/50"
             : tone === "inverse"
               ? "text-inverse-accent/60"
@@ -250,7 +251,7 @@ export function SectionLabel({
       <span
         className={cn(
           "h-px w-6",
-          tone === "gold"
+          tone === "accent"
             ? "bg-accent/40"
             : tone === "inverse"
               ? "bg-inverse-accent/50"
@@ -331,19 +332,24 @@ export function TrackGraphic({
 
 export function LionMark({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 48 48" fill="none" aria-hidden="true" className={className}>
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" className={className}>
+      {/* mane: eleven uneven locks, heavier at the ruff */}
       <path
-        d="M24 3.5 30.2 9l7.6-1.4 1.9 7.4 6.6 3.8-3.2 7.1 2.4 7.4-7 3.4-3.3 7.1-7.5-1.7-6 4.7-5.9-4.7-7.5 1.7-3.3-7.1-7-3.4 2.4-7.4L3.2 18.7l6.6-3.8L11.7 7.5l7.6 1.4L24 3.5Z"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-        opacity="0.55"
-      />
-      <path
-        d="M16 19.5 21 22h6l5-2.5-1.6 8.2L24 34l-6.4-6.3L16 19.5Z"
         fill="currentColor"
+        fillOpacity="0.42"
+        d="M30.04 16.42L33.21 8.33L35.56 16.7ZM38.75 17.77L46.38 12.41L43.76 21.36ZM45.86 24.11L56.07 22.93L47.84 29.09ZM48.19 33.15L58.91 37.75L47.24 37.99ZM45.53 41.42L52.77 52.4L41.49 45.63ZM38.65 47.27L38.89 61.21L32.78 48.68ZM29.13 48.44L22.3 60.31L24.33 46.77ZM20.98 44.38L9.5 50.1L17.82 40.34ZM16.44 37L4.97 35.02L15.87 30.95ZM16.52 27.73L9.22 20.69L19.18 22.6ZM21.9 19.84L19.77 11.2L26.16 17.39Z"
       />
-      <path d="M24 24.5v4" stroke="var(--color-surface)" strokeWidth="1.5" />
+      {/* ears */}
+      <path
+        fill="currentColor"
+        d="M20.5 20C20.5 14 23 11 26 13.5C28.5 15.5 28.5 18.5 27.5 21ZM43.5 20C43.5 14 41 11 38 13.5C35.5 15.5 35.5 18.5 36.5 21Z"
+      />
+      {/* face with knocked-out eyes, nose and muzzle */}
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M24 13C27 11.6 37 11.6 40 13C43 14.5 45 18 46.5 22C47.5 26 48 30 47 33.5C45.5 38 42.5 41.5 39 43.5C36.5 45 34 45.5 32 45.5C30 45.5 27.5 45 25 43.5C21.5 41.5 18.5 38 17 33.5C16 30 16.5 26 17.5 22C19 18 21 14.5 24 13ZM22.7 18.4C23.3 15.8 24.4 14.4 25.6 15.6C26.4 16.7 26.2 18.3 25.3 19.4ZM41.3 18.4C40.7 15.8 39.6 14.4 38.4 15.6C37.6 16.7 37.8 18.3 38.7 19.4ZM23.3 27.6C25 25.8 27.4 25.9 28.8 27.4C27.3 29 24.9 29.1 23.3 27.6ZM40.7 27.6C39 25.8 36.6 25.9 35.2 27.4C36.7 29 39.1 29.1 40.7 27.6ZM28.2 31.2C29 30 35 30 35.8 31.2L32.6 36C32.3 36.4 31.7 36.4 31.4 36ZM31.4 36H32.6V39H31.4ZM32.6 39C34.1 40.9 36.6 41.5 39 40.6L38.5 39.2C36.6 39.9 34.7 39.4 33.4 37.9ZM31.4 39C29.9 40.9 27.4 41.5 25 40.6L25.5 39.2C27.4 39.9 29.3 39.4 30.6 37.9Z"
+      />
     </svg>
   );
 }

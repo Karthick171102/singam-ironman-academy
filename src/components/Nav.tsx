@@ -3,12 +3,6 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { cn } from "./ui";
 import { LionMark } from "./ui";
 import { useSite } from "../lib/preferences";
-import {
-  CompactLangToggle,
-  LangToggle,
-  ThemeSwitch,
-  ThemeToggle,
-} from "./Toggles";
 
 export function Nav({ onJoin }: { onJoin: () => void }) {
   const { c, socials } = useSite();
@@ -46,8 +40,8 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
             className="group flex items-center gap-3"
             aria-label={`${c.meta.brandTop} ${c.meta.brandSub} — ${c.meta.skip}`}
           >
-            <span className="grid h-10 w-10 place-items-center rounded-full border border-accent/40 text-accent transition-colors group-hover:border-gold group-hover:bg-gold group-hover:text-ink">
-              <LionMark className="h-6 w-6" />
+            <span className="grid h-11 w-11 place-items-center rounded-full border border-accent/40 text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent">
+              <LionMark className="h-7 w-7" />
             </span>
             <span className="leading-none">
               <span className="brand-word block text-[17px] font-extrabold tracking-[0.16em] text-fg">
@@ -73,13 +67,10 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
           </nav>
 
           <div className="flex items-center gap-2 sm:gap-2.5">
-            <LangToggle className="hidden sm:inline-flex" />
-            <CompactLangToggle className="sm:hidden" />
-            <ThemeToggle />
             <a
               href="#contact"
               onClick={onJoin}
-              className="ml-1 hidden items-center gap-2 rounded-full bg-gold px-5 py-3 text-[10.5px] font-bold tracking-[0.16em] uppercase text-ink transition-colors hover:bg-fg hover:text-surface sm:inline-flex"
+              className="ml-1 hidden items-center gap-2 rounded-full bg-accent px-5 py-3 text-[10.5px] font-bold tracking-[0.16em] uppercase text-on-accent transition-colors hover:bg-accent-strong sm:inline-flex"
             >
               {c.joinCta}
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -139,14 +130,10 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
           ))}
         </nav>
         <div className="space-y-4 border-t border-line px-6 py-7">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <LangToggle wide />
-            <ThemeSwitch />
-          </div>
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="flex items-center justify-between rounded-full bg-gold px-6 py-4 text-[11px] font-bold tracking-[0.16em] uppercase text-ink"
+            className="flex items-center justify-between rounded-full bg-accent px-6 py-4 text-[11px] font-bold tracking-[0.16em] uppercase text-on-accent transition-colors hover:bg-accent-strong"
           >
             {c.joinCta}
             <ArrowUpRight className="h-4 w-4" />

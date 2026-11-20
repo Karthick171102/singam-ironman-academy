@@ -4,7 +4,7 @@ export function Marquee() {
   const { c } = useSite();
 
   return (
-    <div className="relative overflow-hidden border-y border-ink/10 bg-gold py-3.5 text-ink select-none">
+    <div className="relative overflow-hidden border-y border-ink/10 bg-accent py-3.5 text-on-accent select-none">
       <div className="flex w-max animate-marquee">
         {[0, 1].map((group) => (
           <div
@@ -17,7 +17,7 @@ export function Marquee() {
                 <span className="heading px-6 text-xl whitespace-nowrap md:text-2xl">
                   {word}
                 </span>
-                <span className="text-[10px] opacity-50">✦</span>
+                <span className="h-1.5 w-1.5 rounded-full bg-current opacity-40" />
               </span>
             ))}
           </div>

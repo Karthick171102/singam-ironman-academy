@@ -6,6 +6,7 @@ import { useSite } from "../lib/preferences";
 export function FloatingContact() {
   const { c, contact } = useSite();
   const [hidden, setHidden] = useState(false);
+  const [inHero, setInHero] = useState(true);
 
   useEffect(() => {
     const target = document.getElementById("contact");
@@ -15,6 +16,17 @@ export function FloatingContact() {
       { threshold: 0.18 },
     );
     io.observe(target);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const hero = document.getElementById("top");
+    if (!hero) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInHero(entry.isIntersecting),
+      { threshold: 0.12 },
+    );
+    io.observe(hero);
     return () => io.disconnect();
   }, []);
 
@@ -31,8 +43,10 @@ export function FloatingContact() {
       aria-label={label}
       title={`${c.meta.messageUs}: ${label}`}
       className={cn(
-        "group fixed right-4 bottom-4 z-40 grid h-13 w-13 place-items-center rounded-full bg-gold text-ink shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-all duration-300 hover:bg-fg hover:text-surface md:right-6 md:bottom-6 md:h-14 md:w-14",
-        hidden && "pointer-events-none translate-y-4 opacity-0",
+        "group fixed right-4 bottom-4 z-40 grid h-13 w-13 place-items-center rounded-full bg-accent text-on-accent shadow-[0_16px_40px_-12px_rgba(0,0,0,0.6)] transition-all duration-300 hover:bg-fg hover:text-surface md:right-6 md:bottom-6 md:h-14 md:w-14",
+        hidden || inHero
+          ? "pointer-events-none translate-y-4 opacity-0"
+          : "pointer-events-auto translate-y-0 opacity-100",
       )}
     >
       {contact.whatsapp ? (

@@ -5,6 +5,7 @@ import {
   Youtube,
 } from "lucide-react";
 import { LionMark } from "./ui";
+import { LangToggle, ThemeSwitch } from "./Toggles";
 import { useSite } from "../lib/preferences";
 
 export function Footer() {
@@ -17,8 +18,8 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-full border border-inverse-accent/40 text-inverse-accent">
-                <LionMark className="h-6 w-6" />
+              <span className="grid h-12 w-12 place-items-center rounded-full border border-inverse-accent/40 text-inverse-accent">
+                <LionMark className="h-7 w-7" />
               </span>
               <div>
                 <p className="brand-word text-[17px] font-extrabold tracking-[0.16em]">
@@ -98,11 +99,6 @@ export function Footer() {
                     {c.footer.links.visit}
                   </a>
                 </li>
-                <li>
-                  <a href="#faq" className="hover:text-inverse-fg">
-                    {c.footer.links.faq}
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -129,7 +125,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-6 border-t border-inverse-fg/10 pt-7 text-[10.5px] leading-relaxed text-inverse-fg/35 md:flex-row md:items-start md:justify-between">
+        <div className="mt-12 flex flex-col gap-5 border-t border-inverse-fg/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[9px] font-bold tracking-[0.22em] uppercase text-inverse-accent">
+            {c.footer.preferences}
+          </p>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <LangToggle wide tone="inverse" />
+            <ThemeSwitch tone="inverse" />
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-6 border-t border-inverse-fg/10 pt-7 text-[10.5px] leading-relaxed text-inverse-fg/35 md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl space-y-2">
             <p>{c.footer.copyright(year)}</p>
             <p className="text-inverse-fg/45">{c.footer.disclaimer}</p>

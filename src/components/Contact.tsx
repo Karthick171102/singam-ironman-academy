@@ -354,7 +354,7 @@ export function Contact() {
                     </p>
                     <button
                       type="submit"
-                      className="group inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-fg px-7 py-4 text-[10.5px] font-bold tracking-[0.16em] uppercase text-surface transition-colors hover:bg-gold hover:text-ink"
+                      className="group inline-flex shrink-0 items-center justify-center gap-2.5 rounded-full bg-fg px-7 py-4 text-[10.5px] font-bold tracking-[0.16em] uppercase text-surface transition-colors hover:bg-accent hover:text-on-accent"
                     >
                       {c.contact.form.submit}
                       <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -411,7 +411,7 @@ export function Contact() {
                       }
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-surface transition-colors hover:bg-gold hover:text-ink"
+                      className="inline-flex items-center gap-2 rounded-full bg-fg px-5 py-3 text-[10px] font-bold tracking-[0.14em] uppercase text-surface transition-colors hover:bg-accent hover:text-on-accent"
                     >
                       {whatsappHref ? (
                         <MessageCircle className="h-3.5 w-3.5" />
