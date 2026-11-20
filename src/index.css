@@ -34,6 +34,10 @@
   --animate-marquee: marquee 32s linear infinite;
   --animate-track: track 18s linear infinite;
   --animate-pulse-ring: pulse-ring 3.2s ease-out infinite;
+  --animate-spotlight: spotlight 2s ease 0.4s 1 forwards;
+  --animate-shine-border: shine-border var(--shine-duration, 10s) linear infinite;
+  --animate-dot-glow: dot-glow 6s ease-in-out infinite;
+  --animate-text-shimmer: text-shimmer 4.5s ease-in-out infinite;
 
   /* atmospheric glows used in hero / village / inverse panels */
   --hero-glow: rgba(239, 106, 77, 0.16);
@@ -85,6 +89,43 @@ html[data-theme="light"] {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+@keyframes shine-border {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dot-glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes text-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 

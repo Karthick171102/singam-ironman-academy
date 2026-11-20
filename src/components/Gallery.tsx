@@ -1,5 +1,6 @@
 import { ArrowUpRight, Instagram } from "lucide-react";
 import { Img, Reveal, SectionLabel } from "./ui";
+import { HoverGlow } from "./effects";
 import { useSite } from "../lib/preferences";
 
 export function Gallery() {
@@ -52,6 +53,7 @@ export function Gallery() {
                 rel="noreferrer"
                 className="group relative block h-full min-h-[280px] overflow-hidden rounded-[1.4rem] bg-surface"
               >
+                <HoverGlow color="var(--color-media-accent)" className="z-[2] mix-blend-screen" />
                 <div className="absolute inset-0">
                   <Img
                     src={item.image}
@@ -103,8 +105,9 @@ export function Gallery() {
               href="https://www.instagram.com/sivabalan_singam/"
               target="_blank"
               rel="noreferrer"
-              className="group flex h-full flex-col justify-between rounded-[1.4rem] border border-line bg-inverse p-6 text-inverse-fg transition-colors hover:border-inverse-accent/50"
+              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-[1.4rem] border border-line bg-inverse p-6 text-inverse-fg transition-colors hover:border-inverse-accent/50"
             >
+              <HoverGlow color="var(--color-inverse-accent)" />
               <div className="flex items-center justify-between">
                 <span className="grid h-10 w-10 place-items-center rounded-full border border-inverse-accent/35 text-inverse-accent">
                   <Instagram className="h-4 w-4" strokeWidth={1.8} />

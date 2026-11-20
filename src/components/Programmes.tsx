@@ -10,6 +10,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Reveal, SectionLabel } from "./ui";
+import { HoverGlow } from "./effects";
 import { useSite } from "../lib/preferences";
 import type { ProgrammeIcon } from "../data/site";
 
@@ -56,14 +57,21 @@ export function Programmes() {
                 <article
                   className={
                     featured
-                      ? "group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] bg-inverse p-7 text-inverse-fg"
+                      ? "group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-inverse-accent/20 bg-inverse p-7 text-inverse-fg transition-all duration-300 hover:-translate-y-1 hover:border-inverse-accent/35 hover:shadow-[0_28px_60px_-30px_rgba(0,0,0,0.5)]"
                       : "group relative flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-line bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_24px_50px_-30px_rgba(0,0,0,0.35)]"
                   }
                 >
+                  <HoverGlow
+                    color={
+                      featured
+                        ? "var(--color-inverse-accent)"
+                        : "var(--color-accent)"
+                    }
+                  />
                   {featured && (
                     <>
                       <div className="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-inverse-accent/10 blur-2xl" />
-                      <span className="absolute top-6 right-6 rounded-full bg-inverse-accent px-2.5 py-1 text-[8.5px] font-bold tracking-[0.16em] uppercase text-inverse-fg">
+                      <span className="absolute top-6 right-6 z-[1] rounded-full bg-inverse-accent px-2.5 py-1 text-[8.5px] font-bold tracking-[0.16em] uppercase text-on-inverse-accent">
                         {c.programmes.featured}
                       </span>
                     </>
