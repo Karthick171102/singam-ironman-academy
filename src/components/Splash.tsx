@@ -4,11 +4,13 @@ import { BrandLogo, cn } from "./ui";
 import { useSite } from "../lib/preferences";
 
 const HOLD_MS = 1900;
-const FADE_MS = 650;
+const SHUTTER_MS = 950;
+const REDUCED_EXIT_MS = 220;
 
 /**
- * Brand splash shown on first paint: Aurora light rising behind the lockup,
- * a slim progress rail, then a soft fade into the page.
+ * Brand splash shown on first paint: Aurora light rising behind the lockup and
+ * a slim progress rail, then the whole panel shutters upward off the screen to
+ * reveal the page underneath.
  */
 export function Splash({ onDone }: { onDone: () => void }) {
   const { c, lang, theme } = useSite();
@@ -23,7 +25,7 @@ export function Splash({ onDone }: { onDone: () => void }) {
     const root = document.documentElement;
     const previousOverflow = root.style.overflow;
     let raf = 0;
-    let fadeTimer = 0;
+    let exitTimer = 0;
 
     root.style.overflow = "hidden";
 
@@ -36,13 +38,16 @@ export function Splash({ onDone }: { onDone: () => void }) {
       }
       setProgress(100);
       setLeaving(true);
-      fadeTimer = window.setTimeout(onDone, FADE_MS);
+      exitTimer = window.setTimeout(
+        onDone,
+        reduced ? REDUCED_EXIT_MS : SHUTTER_MS,
+      );
     };
     raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);
-      window.clearTimeout(fadeTimer);
+      window.clearTimeout(exitTimer);
       root.style.overflow = previousOverflow;
     };
   }, [onDone]);
@@ -54,15 +59,21 @@ export function Splash({ onDone }: { onDone: () => void }) {
     ? ["#ef6a4d", "#dd6230", "#a3301f"]
     : ["#a3301f", "#dd6230", "#ef6a4d"];
 
+  const reducedMotion =
+    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+
   return (
     <div
       data-splash
       aria-hidden={leaving || undefined}
       className={cn(
-        "fixed inset-0 z-[90] overflow-hidden bg-surface transition-opacity ease-out",
-        leaving ? "pointer-events-none opacity-0" : "opacity-100",
+        "fixed inset-0 z-[90] overflow-hidden bg-surface shadow-[0_20px_60px_rgba(0,0,0,0.45)]",
+        !leaving && "translate-y-0 opacity-100",
+        leaving &&
+          (reducedMotion
+            ? "pointer-events-none opacity-0 transition-opacity duration-[220ms] ease-out"
+            : "pointer-events-none -translate-y-full transition-transform duration-[950ms] ease-[cubic-bezier(0.76,0,0.24,1)]"),
       )}
-      style={{ transitionDuration: `${FADE_MS}ms` }}
     >
       {/* Aurora curtains, tinted to the site's brick/vermilion palette */}
       <div className="pointer-events-none absolute inset-0">
@@ -93,6 +104,24 @@ export function Splash({ onDone }: { onDone: () => void }) {
           dark
             ? "bg-[radial-gradient(60%_50%_at_50%_44%,rgba(11,13,12,0.86),rgba(11,13,12,0.45)_58%,transparent_80%)]"
             : "bg-[radial-gradient(60%_50%_at_50%_44%,rgba(248,243,233,0.95),rgba(248,243,233,0.52)_58%,transparent_80%)]",
+        )}
+      />
+
+      {/* Bottom edge: reads as a shutter blade as it lifts */}
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 bottom-0 h-px",
+          dark ? "bg-accent/55" : "bg-accent/40",
+        )}
+      />
+      <div
+        aria-hidden="true"
+        className={cn(
+          "pointer-events-none absolute inset-x-0 bottom-0 h-24",
+          dark
+            ? "bg-[linear-gradient(to_top,rgba(239,106,77,0.14),transparent)]"
+            : "bg-[linear-gradient(to_top,rgba(163,48,31,0.12),transparent)]",
         )}
       />
 

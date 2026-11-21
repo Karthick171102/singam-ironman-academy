@@ -22,6 +22,13 @@ function Shell() {
   const dismissSplash = useCallback(() => setShowSplash(false), []);
 
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  useEffect(() => {
     const onScroll = () => {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;

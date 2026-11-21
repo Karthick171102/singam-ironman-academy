@@ -53,7 +53,7 @@ Toggle components live in `src/components/Toggles.tsx` (`LangToggle`, `CompactLa
 - **Splash:** `src/components/Splash.tsx` renders on first paint with the language-aware
   lockup, a 1.9 s progress rail and the React Bits `Aurora` canvas
   (`src/components/Aurora.tsx`). Its colour stops and `lightMode` flag follow the current
-  theme so the wash stays brick/vermilion over ink or bone. It fades out after load,
+  theme so the wash stays brick/vermilion over ink or bone. It shutters upward after load,
   respects `prefers-reduced-motion`, and locks scroll only while visible.
 
 > **Note:** The Tamil copy is hand-written, not machine-translated. Have a native speaker
