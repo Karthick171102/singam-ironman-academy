@@ -12,6 +12,7 @@ import { FAQ } from "./components/FAQ";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { FloatingContact } from "./components/FloatingContact";
+import { ScrollTop } from "./components/ScrollTop";
 import { Splash } from "./components/Splash";
 import { SiteProvider, useSite } from "./lib/preferences";
 
@@ -82,6 +83,7 @@ function Shell() {
       </main>
 
       <Footer />
+      <ScrollTop />
       <FloatingContact />
     </>
   );

@@ -1,10 +1,10 @@
 import { ArrowDown, Play } from "lucide-react";
-import { LinkButton, BrandMark, TrackGraphic } from "./ui";
+import { LinkButton } from "./ui";
 import { BlurFade, DotPattern, NumberTicker, Spotlight } from "./effects";
 import { useSite } from "../lib/preferences";
 
 export function Hero({ onJoin }: { onJoin: () => void }) {
-  const { c, lang } = useSite();
+  const { c } = useSite();
 
   return (
     <section
@@ -18,7 +18,6 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
         <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_10%_100%,var(--hero-ember),transparent_60%)]" />
         <div className="grid-lines absolute inset-0 opacity-70" />
         <DotPattern className="opacity-[0.22] [mask-image:radial-gradient(70%_60%_at_50%_40%,black,transparent)]" />
-        <TrackGraphic className="absolute -right-[16%] top-[14%] hidden w-[820px] rotate-[6deg] text-fg/25 lg:block xl:-right-[8%] xl:w-[900px]" />
       </div>
 
       {/* side rail */}
@@ -117,35 +116,6 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
               <p className="mt-0.5 text-[10px] text-fg/50">{s.note}</p>
             </BlurFade>
           ))}
-        </div>
-      </div>
-
-      {/* rotating stamp */}
-      <div className="pointer-events-none absolute top-28 right-8 hidden xl:block">
-        <div className="relative grid h-36 w-36 place-items-center text-fg/40">
-          <svg
-            viewBox="0 0 200 200"
-            className="absolute inset-0 animate-[spin_34s_linear_infinite]"
-          >
-            <defs>
-              <path
-                id="stampPath"
-                d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"
-              />
-            </defs>
-            <text
-              fill="currentColor"
-              fontSize={lang === "ta" ? "9" : "10.5"}
-              letterSpacing={lang === "ta" ? 1.4 : 4.2}
-              fontFamily={
-                lang === "ta" ? "'Anek Tamil', sans-serif" : "Manrope, sans-serif"
-              }
-              fontWeight="600"
-            >
-              <textPath href="#stampPath">{c.hero.stamp}</textPath>
-            </text>
-          </svg>
-          <BrandMark className="h-10 w-auto text-accent/70" />
         </div>
       </div>
     </section>
