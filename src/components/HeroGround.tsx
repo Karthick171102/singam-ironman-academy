@@ -13,7 +13,7 @@ export function HeroGround({ fill = false }: { fill?: boolean }) {
       className={
         fill
           ? "relative h-full w-full overflow-hidden rounded-[1.5rem] border border-line/70 bg-surface-2 shadow-[0_36px_80px_-40px_rgba(0,0,0,0.6)]"
-          : "relative mx-auto aspect-[4/5] w-full max-w-[420px] overflow-hidden rounded-[1.5rem] border border-line/70 bg-surface-2 shadow-[0_36px_80px_-40px_rgba(0,0,0,0.6)] lg:max-w-[480px]"
+          : "relative mx-auto aspect-[16/10] w-full max-w-[420px] overflow-hidden rounded-[1.5rem] border border-line/70 bg-surface-2 shadow-[0_36px_80px_-40px_rgba(0,0,0,0.6)] sm:aspect-[5/3] lg:max-w-[480px]"
       }
     >
       <Img

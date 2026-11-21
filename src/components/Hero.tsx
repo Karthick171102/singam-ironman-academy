@@ -106,7 +106,7 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
       {/* Desktop: full-height ground feature pinned to the right edge */}
       <div className="pointer-events-none absolute top-0 right-0 hidden h-full w-[42%] lg:block xl:w-[40%]">
         <div className="relative h-full w-full">
-          <div className="pointer-events-none absolute top-[11%] right-4 h-[76%] w-[82%] max-w-[520px] xl:right-8">
+          <div className="pointer-events-none absolute top-[12%] right-4 h-[58%] w-[78%] max-w-[480px] xl:right-8">
             <BlurFade delay={380} duration={0.8} inView={false} className="h-full">
               <HeroGround fill />
             </BlurFade>
@@ -116,7 +116,7 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
 
       {/* Stats strip */}
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 md:px-8 lg:px-12">
-        <div className="grid max-w-[80%] grid-cols-2 border-t border-line md:grid-cols-4 lg:max-w-[60%]">
+        <div className="grid grid-cols-2 border-t border-line md:grid-cols-4">
           {c.stats.map((s, i) => (
             <BlurFade
               key={s.label}
