@@ -1,5 +1,5 @@
-import { ArrowDown, MapPin, Play } from "lucide-react";
-import { LinkButton, LionMark, TrackGraphic } from "./ui";
+import { ArrowDown, Play } from "lucide-react";
+import { LinkButton, BrandMark, TrackGraphic } from "./ui";
 import { BlurFade, DotPattern, NumberTicker, Spotlight } from "./effects";
 import { useSite } from "../lib/preferences";
 
@@ -30,22 +30,6 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
 
       <div className="mx-auto w-full max-w-[1440px] px-5 pb-10 md:px-8 lg:px-12">
         <div className="max-w-4xl">
-          <BlurFade delay={0} duration={0.55} inView={false}>
-            <div className="mb-7 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/8 px-3.5 py-1.5 text-[10px] font-semibold tracking-[0.2em] uppercase text-accent shadow-[0_0_0_1px_rgba(239,106,77,0.06)]">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-pulse-ring absolute inline-flex h-full w-full rounded-full bg-accent" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-                </span>
-                {c.hero.badge}
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-[10px] font-medium tracking-[0.18em] uppercase text-fg/45">
-                <MapPin className="h-3 w-3" />
-                {c.hero.location}
-              </span>
-            </div>
-          </BlurFade>
-
           <h1 className="heading text-[15.5vw] leading-[0.85] text-fg sm:text-[13vw] md:text-[9.5rem] lg:text-[8.2rem] xl:text-[9.6rem]">
             <BlurFade delay={60} duration={0.7} inView={false} yOffset={18} blur="8px">
               <span className="block">{c.hero.line1}</span>
@@ -154,16 +138,14 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
               fontSize={lang === "ta" ? "9" : "10.5"}
               letterSpacing={lang === "ta" ? 1.4 : 4.2}
               fontFamily={
-                lang === "ta"
-                  ? "'Noto Sans Tamil', sans-serif"
-                  : "Inter, sans-serif"
+                lang === "ta" ? "'Anek Tamil', sans-serif" : "Manrope, sans-serif"
               }
               fontWeight="600"
             >
               <textPath href="#stampPath">{c.hero.stamp}</textPath>
             </text>
           </svg>
-          <LionMark className="h-12 w-12 text-accent/60" />
+          <BrandMark className="h-10 w-auto text-accent/70" />
         </div>
       </div>
     </section>

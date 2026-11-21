@@ -90,7 +90,6 @@ const en = {
     { value: "87.7K", label: "YouTube subscribers", note: "Siva Balan" },
   ],
   hero: {
-    badge: "Founded September 2025",
     location: "Sivagangai, Tamil Nadu",
     rail: "Sivagangai · Tamil Nadu · India",
     line1: "Train strong.",
@@ -535,7 +534,6 @@ const ta: typeof en = {
     { value: "87.7K", label: "யூடியூப் சந்தாதாரர்கள்", note: "சிவா பாலன்" },
   ],
   hero: {
-    badge: "செப்டம்பர் 2025-ல் தொடங்கியது",
     location: "சிவகங்கை, தமிழ்நாடு",
     rail: "சிவகங்கை · தமிழ்நாடு · இந்தியா",
     line1: "வலிமையாய் பயிற்சி.",

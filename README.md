@@ -38,13 +38,14 @@ with an Ironman trademark clarification.
   key is missing from the Tamil copy. The switcher updates `<html lang>`.
 - **Theme:** light and dark. Colours are semantic CSS variables in `src/index.css`
   (`surface`, `surface-2`, `card`, `fg`, `line`, `accent`, `inverse`, `inverse-fg`,
-  `inverse-accent`). Only the brand colours (`ink`, `bone`, `gold`) stay fixed.
+  `inverse-accent`). Only the brand colours (`ink`, `bone`, `ember`) stay fixed.
 - **Persistence:** `src/lib/preferences.tsx` stores the choice in `localStorage`
   (`sia-lang`, `sia-theme`) and reflects the theme on `<html data-theme>`. With no saved
   value the theme follows the operating system. An inline script in `index.html` applies
   both before first paint, so there is no flash of the wrong theme or language.
-- **Tamil typography:** headings switch to `Noto Sans Tamil` with looser leading and no
-  uppercase transform, and wide Latin letter-spacing is relaxed for Tamil microlabels.
+- **Typography:** Manrope for Latin text and Anek Tamil for Tamil copy (body, headings
+  and microlabels). Tamil headings use looser leading and no uppercase transform, and wide
+  Latin letter-spacing is relaxed for Tamil microlabels.
 
 Toggle components live in `src/components/Toggles.tsx` (`LangToggle`, `CompactLangToggle`,
 `ThemeToggle`, `ThemeSwitch`). They are used in the desktop nav and the mobile menu.

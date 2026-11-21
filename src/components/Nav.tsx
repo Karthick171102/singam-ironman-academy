@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { cn } from "./ui";
-import { LionMark } from "./ui";
+import { cn, BrandLogo } from "./ui";
 import { useSite } from "../lib/preferences";
 
 export function Nav({ onJoin }: { onJoin: () => void }) {
@@ -37,20 +36,10 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
           {/* Brand */}
           <a
             href="#top"
-            className="group flex items-center gap-3"
+            className="flex items-center transition-opacity hover:opacity-90"
             aria-label={`${c.meta.brandTop} ${c.meta.brandSub} — ${c.meta.skip}`}
           >
-            <span className="grid h-11 w-11 place-items-center rounded-full border border-accent/40 text-accent transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-on-accent">
-              <LionMark className="h-7 w-7" />
-            </span>
-            <span className="leading-none">
-              <span className="brand-word block text-[17px] font-extrabold tracking-[0.16em] text-fg">
-                {c.meta.brandTop}
-              </span>
-              <span className="brand-sub mt-1 block text-[8.5px] font-semibold tracking-[0.3em] text-fg/50">
-                {c.meta.brandSub}
-              </span>
-            </span>
+            <BrandLogo className="h-8 w-auto text-fg md:h-[2.15rem]" />
           </a>
 
           {/* Desktop links */}

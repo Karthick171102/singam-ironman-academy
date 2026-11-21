@@ -4,7 +4,7 @@ import {
   Instagram,
   Youtube,
 } from "lucide-react";
-import { LionMark } from "./ui";
+import { BrandLogo } from "./ui";
 import { LangToggle, ThemeSwitch } from "./Toggles";
 import { useSite } from "../lib/preferences";
 
@@ -17,19 +17,13 @@ export function Footer() {
       <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-full border border-inverse-accent/40 text-inverse-accent">
-                <LionMark className="h-7 w-7" />
-              </span>
-              <div>
-                <p className="brand-word text-[17px] font-extrabold tracking-[0.16em]">
-                  {c.meta.brandTop}
-                </p>
-                <p className="brand-sub mt-1 text-[8.5px] font-semibold tracking-[0.3em] text-inverse-fg/45">
-                  {c.meta.brandSub}
-                </p>
-              </div>
-            </div>
+            <a
+              href="#top"
+              className="inline-flex transition-opacity hover:opacity-90"
+              aria-label={`${c.meta.brandTop} ${c.meta.brandSub}`}
+            >
+              <BrandLogo className="h-9 w-auto text-inverse-fg md:h-10" />
+            </a>
             <p className="mt-6 max-w-xs text-[13px] leading-relaxed text-inverse-fg/50">
               {c.footer.blurb}
             </p>

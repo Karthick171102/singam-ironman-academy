@@ -5,7 +5,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
-import { cn, Img, LionMark, Reveal, SectionLabel } from "./ui";
+import { cn, Img, BrandMark, Reveal, SectionLabel } from "./ui";
 import { useSite } from "../lib/preferences";
 import type { CredentialIcon } from "../data/site";
 
@@ -59,7 +59,7 @@ export function About() {
                         </h3>
                       </div>
                       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/20 bg-black/25 text-media-accent backdrop-blur-md">
-                        <LionMark className="h-6 w-6" />
+                        <BrandMark className="h-5 w-auto" />
                       </span>
                     </div>
                   </div>
