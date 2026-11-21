@@ -74,6 +74,7 @@ const en = {
     skip: "Skip to content",
     backToTop: "Back to top",
     messageUs: "Message us on",
+    loading: "Loading",
   },
   nav: [
     { label: "About", href: "#about" },
@@ -518,6 +519,7 @@ const ta: typeof en = {
     skip: "உள்ளடக்கத்திற்குச் செல்",
     backToTop: "மேலே செல்",
     messageUs: "எங்களைத் தொடர்பு கொள்ளுங்கள்",
+    loading: "ஏற்றுகிறது",
   },
   nav: [
     { label: "எங்களைப் பற்றி", href: "#about" },

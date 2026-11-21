@@ -48,7 +48,13 @@ with an Ironman trademark clarification.
   Latin letter-spacing is relaxed for Tamil microlabels.
 
 Toggle components live in `src/components/Toggles.tsx` (`LangToggle`, `CompactLangToggle`,
-`ThemeToggle`, `ThemeSwitch`). They are used in the desktop nav and the mobile menu.
+`ThemeToggle`, `ThemeSwitch`). They are used in the footer preferences row.
+
+- **Splash:** `src/components/Splash.tsx` renders on first paint with the language-aware
+  lockup, a 1.9 s progress rail and the React Bits `Aurora` canvas
+  (`src/components/Aurora.tsx`). Its colour stops and `lightMode` flag follow the current
+  theme so the wash stays brick/vermilion over ink or bone. It fades out after load,
+  respects `prefers-reduced-motion`, and locks scroll only while visible.
 
 > **Note:** The Tamil copy is hand-written, not machine-translated. Have a native speaker
 > review it before launch, especially the programme names, FAQ answers and legal

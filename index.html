@@ -22,6 +22,15 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <style>
+      /* Paint the correct surface colour before the bundle arrives */
+      html {
+        background-color: #0b0d0c;
+      }
+      html[data-theme="light"] {
+        background-color: #f8f3e9;
+      }
+    </style>
     <script>
       // Apply saved/OS language + theme before first paint to avoid a flash.
       (function () {

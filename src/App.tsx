@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
@@ -12,11 +12,14 @@ import { FAQ } from "./components/FAQ";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { FloatingContact } from "./components/FloatingContact";
+import { Splash } from "./components/Splash";
 import { SiteProvider, useSite } from "./lib/preferences";
 
 function Shell() {
   const { c } = useSite();
   const [progress, setProgress] = useState(0);
+  const [showSplash, setShowSplash] = useState(true);
+  const dismissSplash = useCallback(() => setShowSplash(false), []);
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,6 +44,8 @@ function Shell() {
 
   return (
     <>
+      {showSplash && <Splash onDone={dismissSplash} />}
+
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-70 focus:rounded-full focus:bg-accent focus:px-5 focus:py-3 focus:text-[11px] focus:font-bold focus:tracking-widest focus:text-on-accent focus:uppercase"
