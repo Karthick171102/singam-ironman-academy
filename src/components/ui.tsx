@@ -6,6 +6,7 @@ import {
   type ReactNode,
 } from "react";
 import { ArrowUpRight, ImageOff } from "lucide-react";
+import { TamilLogo } from "./TamilLogo";
 
 export function cn(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -366,7 +367,15 @@ export function BrandMark({ className }: { className?: string }) {
   );
 }
 
-export function BrandLogo({ className }: { className?: string }) {
+export function BrandLogo({
+  className,
+  lang = "en",
+}: {
+  className?: string;
+  lang?: "en" | "ta";
+}) {
+  if (lang === "ta") return <TamilLogo className={className} />;
+
   return (
     <svg
       viewBox="0 0 215 43"

@@ -117,10 +117,12 @@ Only publish photography and reels with Siva Balan's written permission.
 
 ### 4. Brand assets
 
-The site currently uses a typographic wordmark plus a custom abstract lion mark
-(`LionMark` in `src/components/ui.tsx`) and `public/favicon.svg`. If official logo files,
-colours or Tamil/English taglines are supplied, drop them in and update the mark,
-`--color-gold`, and the metadata/OG tags in `index.html`.
+The official `Frame 4` (English) and `Frame 5` (Tamil) lockups live in
+`src/components/ui.tsx` (`BrandLogo`, via `TamilLogo`) with the standalone mark in
+`BrandMark`. The wordmark inherits `currentColor`, so the logo adapts to dark, light and
+inverse surfaces while the orange mark stays `#FF5900`. Matching icons are in
+`public/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`,
+`icon-512.png` and `public/site.webmanifest`.
 
 ## Content integrity decisions
 

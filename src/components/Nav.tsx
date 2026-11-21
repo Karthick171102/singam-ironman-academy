@@ -4,7 +4,7 @@ import { cn, BrandLogo } from "./ui";
 import { useSite } from "../lib/preferences";
 
 export function Nav({ onJoin }: { onJoin: () => void }) {
-  const { c, socials } = useSite();
+  const { c, socials, lang } = useSite();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,7 +39,10 @@ export function Nav({ onJoin }: { onJoin: () => void }) {
             className="flex items-center transition-opacity hover:opacity-90"
             aria-label={`${c.meta.brandTop} ${c.meta.brandSub} — ${c.meta.skip}`}
           >
-            <BrandLogo className="h-8 w-auto text-fg md:h-[2.15rem]" />
+            <BrandLogo
+              lang={lang}
+              className="h-8 w-auto text-fg md:h-[2.15rem]"
+            />
           </a>
 
           {/* Desktop links */}

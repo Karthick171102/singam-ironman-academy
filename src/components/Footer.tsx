@@ -9,7 +9,7 @@ import { LangToggle, ThemeSwitch } from "./Toggles";
 import { useSite } from "../lib/preferences";
 
 export function Footer() {
-  const { c, contact, socials } = useSite();
+  const { c, contact, socials, lang } = useSite();
   const year = new Date().getFullYear();
 
   return (
@@ -22,7 +22,7 @@ export function Footer() {
               className="inline-flex transition-opacity hover:opacity-90"
               aria-label={`${c.meta.brandTop} ${c.meta.brandSub}`}
             >
-              <BrandLogo className="h-9 w-auto text-inverse-fg md:h-10" />
+              <BrandLogo lang={lang} className="h-9 w-auto text-inverse-fg md:h-10" />
             </a>
             <p className="mt-6 max-w-xs text-[13px] leading-relaxed text-inverse-fg/50">
               {c.footer.blurb}
