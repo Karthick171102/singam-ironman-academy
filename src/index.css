@@ -239,12 +239,6 @@ html[lang="ta"] .eyebrow {
 }
 
 /* DotField background is rendered by React where needed. */
-@utility grid-lines {
-  background-image:
-    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 96px 96px;
-}
 
 @utility no-scrollbar {
   scrollbar-width: none;

@@ -19,7 +19,7 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(120%_85%_at_82%_-5%,var(--hero-glow),transparent_58%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_10%_100%,var(--hero-ember),transparent_60%)]" />
-        <div className="grid-lines absolute inset-0 opacity-70" />
+
         <DotPattern className="opacity-[0.22] [mask-image:radial-gradient(70%_60%_at_50%_40%,black,transparent)]" />
       </div>
 

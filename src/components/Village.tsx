@@ -47,7 +47,7 @@ export function Village() {
           {/* track visual */}
           <Reveal className="lg:col-span-7">
             <div className="relative overflow-hidden rounded-[1.75rem] border border-line bg-[linear-gradient(160deg,var(--color-card)_0%,var(--color-surface)_70%)]">
-              <div className="grid-lines pointer-events-none absolute inset-0 opacity-60" />
+
 
               <div className="relative flex items-center justify-between gap-3 px-6 pt-6 md:px-8">
                 <span className="inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-[9px] font-semibold tracking-[0.18em] uppercase text-fg/60">
