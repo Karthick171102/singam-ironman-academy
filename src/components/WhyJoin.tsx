@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { LinkButton, Reveal, SectionLabel } from "./ui";
+import { DotBg } from "./DotBg";
 import { HoverGlow } from "./effects";
 import { useSite } from "../lib/preferences";
 
@@ -9,8 +10,9 @@ export function WhyJoin() {
   return (
     <section
       id="why"
-      className="grain relative overflow-hidden bg-inverse py-24 text-inverse-fg md:py-32"
+      className="relative isolate overflow-hidden bg-inverse py-24 text-inverse-fg md:py-32"
     >
+      <DotBg tone="inverse" />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_50%_at_100%_100%,var(--hero-ember),transparent_60%)]" />
 
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">

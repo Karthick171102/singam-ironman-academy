@@ -11,6 +11,7 @@ import {
   Send,
 } from "lucide-react";
 import { cn, Reveal, SectionLabel } from "./ui";
+import { DotBg } from "./DotBg";
 import { useSite } from "../lib/preferences";
 
 type Enquiry = {
@@ -82,8 +83,9 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="grain relative overflow-hidden bg-inverse py-24 text-inverse-fg md:py-32"
+      className="relative isolate overflow-hidden bg-inverse py-24 text-inverse-fg md:py-32"
     >
+      <DotBg tone="inverse" />
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_0%_0%,var(--hero-glow),transparent_55%)]" />
         <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-inverse-accent/40 to-transparent" />

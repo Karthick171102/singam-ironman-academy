@@ -1,6 +1,7 @@
 import { ArrowDown, Play } from "lucide-react";
 import { LinkButton } from "./ui";
 import { BlurFade, DotPattern, NumberTicker, Spotlight } from "./effects";
+import { DotBg } from "./DotBg";
 import { HeroGround } from "./HeroGround";
 import { useSite } from "../lib/preferences";
 
@@ -10,8 +11,9 @@ export function Hero({ onJoin }: { onJoin: () => void }) {
   return (
     <section
       id="top"
-      className="grain relative flex min-h-svh flex-col justify-end overflow-hidden bg-surface pt-32 md:pt-40"
+      className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden bg-surface pt-32 md:pt-40"
     >
+      <DotBg />
       {/* Atmosphere */}
       <Spotlight className="-top-40 left-[-10%] md:-top-20 md:left-[10%]" />
       <div className="pointer-events-none absolute inset-0 -z-10">

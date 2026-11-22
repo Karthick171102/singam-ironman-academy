@@ -1,5 +1,6 @@
 import { ArrowUpRight, Construction, Flag, MapPin } from "lucide-react";
 import { cn, LinkButton, Reveal, SectionLabel, TrackGraphic } from "./ui";
+import { DotBg } from "./DotBg";
 import { useSite } from "../lib/preferences";
 
 export function Village() {
@@ -12,8 +13,9 @@ export function Village() {
   return (
     <section
       id="village"
-      className="grain relative overflow-hidden bg-surface py-24 md:py-32"
+      className="relative isolate overflow-hidden bg-surface py-24 md:py-32"
     >
+      <DotBg />
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(90%_60%_at_20%_0%,var(--hero-glow),transparent_60%)]" />
 
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">

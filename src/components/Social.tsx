@@ -1,5 +1,6 @@
 import { ArrowUpRight, Instagram, Play, Youtube } from "lucide-react";
 import { Img, Reveal, SectionLabel } from "./ui";
+import { DotBg } from "./DotBg";
 import { useSite } from "../lib/preferences";
 
 const icons = {
@@ -14,8 +15,9 @@ export function Social() {
   return (
     <section
       id="follow"
-      className="grain relative overflow-hidden bg-surface py-24 md:py-32"
+      className="relative isolate overflow-hidden bg-surface py-24 md:py-32"
     >
+      <DotBg />
       <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
