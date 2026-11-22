@@ -6,6 +6,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn, Img, BrandMark, Reveal, SectionLabel } from "./ui";
+import ReflectiveCard from "./ReflectiveCard";
 import { useSite } from "../lib/preferences";
 import type { CredentialIcon } from "../data/site";
 
@@ -31,53 +32,67 @@ export function About() {
           {/* Athlete card */}
           <Reveal className="lg:col-span-5">
             <div className="relative mx-auto max-w-md lg:sticky lg:top-28">
-              <div className="relative overflow-hidden rounded-[1.75rem] bg-inverse text-inverse-fg shadow-[0_30px_70px_-30px_rgba(0,0,0,0.45)]">
-                <div className="relative aspect-[4/5] w-full overflow-hidden">
-                  <Img
-                    src="/founder/siva-balan-portrait.jpg"
-                    alt={`${c.about.cardName} — ${c.about.cardRole}`}
-                    wrapperClassName="h-full w-full"
-                    className="h-full w-full object-cover object-[50%_32%]"
-                    fallbackLabel={c.about.cardName}
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,13,12,0.94)_0%,rgba(11,13,12,0.5)_36%,rgba(11,13,12,0.04)_66%)]" />
-                  <div className="absolute inset-x-0 top-0 h-28 bg-[linear-gradient(to_bottom,rgba(11,13,12,0.78),transparent)]" />
-
-                  <div className="absolute inset-x-0 top-0 flex items-center justify-between gap-3 p-6 text-[9px] font-semibold tracking-[0.24em] uppercase text-white/75">
-                    <span>{c.about.cardFooter}</span>
-                    <span>{c.about.cardEst}</span>
+              <div className="aspect-[4/5] w-full">
+                <ReflectiveCard
+                  theme="dark"
+                  width="100%"
+                  height="100%"
+                  radius={28}
+                  tint="#f2e8df"
+                  metalness={0.95}
+                  roughness={0.28}
+                  blurStrength={5}
+                  grayscale={0.25}
+                  shine={1.1}
+                  glare={0.55}
+                  className="h-full w-full"
+                  style={{ "--rc-pad": "0px" } as any}
+                >
+                  <div className="absolute inset-0">
+                    <Img
+                      src="/founder/siva-balan-portrait.jpg"
+                      alt={`${c.about.cardName} — ${c.about.cardRole}`}
+                      wrapperClassName="h-full w-full"
+                      className="h-full w-full object-cover object-[50%_32%] opacity-[0.72] mix-blend-luminosity"
+                      fallbackLabel={c.about.cardName}
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(11,13,12,0.92)_0%,rgba(11,13,12,0.45)_38%,rgba(11,13,12,0.12)_70%)]" />
+                    <div className="absolute inset-0 bg-[radial-gradient(80%_45%_at_50%_10%,rgba(239,106,77,0.16),transparent_70%)]" />
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                    <div className="flex items-end justify-between gap-4">
-                      <div>
-                        <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-media-accent">
-                          {c.about.cardRole}
-                        </p>
-                        <h3 className="heading mt-2.5 text-4xl text-white md:text-5xl">
+                  <div className="relative z-10 flex h-full flex-col p-5 md:p-6">
+                    <div className="flex items-center justify-between gap-3 text-[9px] font-semibold tracking-[0.24em] uppercase text-white/75">
+                      <span>{c.about.cardFooter}</span>
+                      <span>{c.about.cardEst}</span>
+                    </div>
+
+                    <div className="mt-auto">
+                      <p className="text-[9px] font-semibold tracking-[0.3em] uppercase text-media-accent">
+                        {c.about.cardRole}
+                      </p>
+                      <div className="mt-2.5 flex items-end justify-between gap-4">
+                        <h3 className="heading text-4xl text-white md:text-5xl">
                           {c.about.cardName}
                         </h3>
+                        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/20 bg-black/25 text-media-accent backdrop-blur-md">
+                          <BrandMark className="h-5 w-auto" />
+                        </span>
                       </div>
-                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-white/20 bg-black/25 text-media-accent backdrop-blur-md">
-                        <BrandMark className="h-5 w-auto" />
-                      </span>
+
+                      <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-white/72">
+                        {c.about.cardBlurb}
+                      </p>
+                      <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-white/12 pt-4">
+                        <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-white/55">
+                          {c.about.cardLocation}
+                        </span>
+                        <span className="rounded-full border border-inverse-accent/35 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] uppercase text-inverse-accent">
+                          {c.about.cardChip}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="relative p-6 md:p-7">
-                  <p className="max-w-[34ch] text-sm leading-relaxed text-inverse-fg/60">
-                    {c.about.cardBlurb}
-                  </p>
-                  <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-inverse-fg/10 pt-5">
-                    <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-inverse-fg/45">
-                      {c.about.cardLocation}
-                    </span>
-                    <span className="rounded-full border border-inverse-accent/35 px-3 py-1 text-[9px] font-semibold tracking-[0.18em] uppercase text-inverse-accent">
-                      {c.about.cardChip}
-                    </span>
-                  </div>
-                </div>
+                </ReflectiveCard>
               </div>
 
               {/* caption under card */}
